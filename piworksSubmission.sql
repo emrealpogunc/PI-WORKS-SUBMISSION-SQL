@@ -1,5 +1,6 @@
+
 CREATE DATABASE piworks;--Creating the database from here
-USE piworks;--uisng the databse
+USE piworks;--using the database
 
 CREATE TABLE EmployeeTable(--creating the first table
     Employee_ID int ,
@@ -18,7 +19,7 @@ CREATE TABLE PaymentsTable(--second table here
     --and referencing to the EmployeeTable's primary key
 );
 
-DESCRIBE EmployeeTable;--chekcing the stats
+DESCRIBE EmployeeTable;--checking the stats
 DESCRIBE PaymentsTable;
 INSERT INTO EmployeeTable (Employee_ID,FirstName,LastName,City,State)--with this order we are going
 --to enter the values
@@ -52,10 +53,13 @@ SELECT * FROM PaymentsTable;
 
 --Write the SQL queries to display the total amount earned by each employee's name and surname.
 SELECT employeetable.Employee_ID,employeetable.FirstName
-,employeetable.LastName,sm.Total_Earnings as Total_Earnings --selecting what to display
+,employeetable.LastName,sm.Total_Earnings as Total_Earnings 
 FROM employeetable
+JOIN (SELECT Employee_ID, SUM(MonthIDValue) AS Total_Earnings FROM PaymentsTable 
+GROUP BY Employee_ID) sm
+ON sm.Employee_ID=employeetable.Employee_ID;
+--selecting what to display
 --joining employeetable and paymentstable
-JOIN (SELECT Employee_ID, SUM(MonthIDValue) AS Total_Earnings FROM PaymentsTable --summing the values for the 
---corresponding employees
-GROUP BY Employee_ID) sm--creating an alias bsed on this query
-ON sm.Employee_ID=employeetable.Employee_ID;--we put on the corresponging columns
+--summing the values for the corresponding employees
+--creating an alias bsed on this query
+--we put on the corresponging columns
