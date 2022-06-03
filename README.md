@@ -5,10 +5,10 @@ PI WORKS technical assestment submission for the SQL question. I used **MySQL 8*
 ![Captusse](https://user-images.githubusercontent.com/76528314/171268623-3bbb7d1f-687b-4d59-b982-72a167cffafc.PNG)
 
 ## Results
-Description of EmployeeTable:  
+Description of PaymentTable:  
 ![Capture](https://user-images.githubusercontent.com/76528314/171300652-627a0c22-0d9e-4294-9d54-c3df4e8efdbb.PNG)
 
-Description of PaymentsTable:  
+Description of EmployeeTable  
 ![Capture2](https://user-images.githubusercontent.com/76528314/171300690-b8f1ea62-8fa7-48bc-bd18-736b37856105.PNG)
 
 EmployeeTable:  
